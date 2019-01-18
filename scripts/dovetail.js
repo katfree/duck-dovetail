@@ -1,3 +1,4 @@
+
 /*
     Function to convert a JavaScript object representation
     of a product to an HTML representation
@@ -7,20 +8,16 @@ const createProductHTML = product => `
       <header class="product__header">
         <h2>${product.name}</h2>
       </header>
-
       <p class="product__description">
         ${product.description}
       </p>
-
       <footer class="product__footer">
         Price: ${product.price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD"
         })}
-
         <button id="${product.id}" class="product__purchaseButton">Purchase</button>
       </footer>
-
     </section>
 `
 
@@ -55,16 +52,16 @@ for (button of allButtons) {
             // Only if something was found, add the object to the
             // shopping cart array
             if (foundProduct !== null) {
-                shoppingCart.push(foundProduct)
-                displayShoppingCart()
+                itemToAdd = foundProduct
+                compareQuantity()
+                displayshoppingCart()
+                console.log(shoppingCart)
             }
 
         }
     )
 
 }
-
-
 
 
 
